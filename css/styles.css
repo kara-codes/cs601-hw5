@@ -1,0 +1,22 @@
+* {
+    background-color: floralwhite;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+button {
+    background-color: mediumspringgreen;
+    border-radius: 15px;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+}
+div.button {
+    align-items: center;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+button:hover {
+    cursor:pointer;
+}
