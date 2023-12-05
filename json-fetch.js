@@ -1,7 +1,7 @@
 document.getElementById("import").addEventListener = ("click", makeRequest);
 
 async function makeRequest() {
-    const url = "https://api.github.com/repos/kara-codes/cs601-hw5/branches/main";
+    const url = "https://kara-codes.github.io/cs601-hw5/college_degrees.json";
     //Perform the fetch 
     await fetch(url)
         //Check response status
@@ -13,11 +13,10 @@ async function makeRequest() {
         })
         .then( data => {
             console.log('data: ', data);
-             dataString = JSON.stringify({table:"college_degrees"});
+             dataString = JSON.stringify({data});
              document.getElementById('content').innerHTML = dataString;
         })
         .catch(error => {
             console.error('Fetch error: ', error.message);
         });
 }
-
