@@ -1,8 +1,7 @@
 document.getElementById("import").addEventListener = ("click", makeRequest);
 
 async function makeRequest() {
-    //const url = "https://api.jsonbin.io/v3/qs/656e7e9854105e766fd9ae9f";
-    const url = "../assets/college_degrees.json";
+    const url = "college_degrees.json";
     //Perform the fetch 
     await fetch(url)
         .then(response => {
