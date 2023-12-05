@@ -1,10 +1,10 @@
 document.getElementById("import").addEventListener = ("click", makeRequest);
 
 async function makeRequest() {
-    //const url = "https://api.jsonbin.io/v3/qs/656e7e9854105e766fd9ae9f";
-    const url = "../assets/college_degrees.json";
+    const url = "https://api.github.com/repos/kara-codes/cs601-hw5/branches/main";
     //Perform the fetch 
     await fetch(url)
+        //Check response status
         .then(response => {
             if (!response.ok) {
                 throw new Error('An error occurred! Status: ${response.status}');
@@ -13,7 +13,7 @@ async function makeRequest() {
         })
         .then( data => {
             console.log('data: ', data);
-             dataString = JSON.stringify(data);
+             dataString = JSON.stringify({table:"college_degrees"});
              document.getElementById('content').innerHTML = dataString;
         })
         .catch(error => {
@@ -21,22 +21,3 @@ async function makeRequest() {
         });
 }
 
-// function buildDegreeList(college_degrees) {
-//     const degreeList = college_degrees.map(degree => {
-//         return `<div class="item">
-//            <dt>
-//                ${degree.school}
-//            </dt>
-//            <dd>
-//                 ${degree.program/major}
-//            </dd>
-//           <dd>
-//                 ${degree.type}
-//           </dd>
-//           <dd>
-//                 ${degree.year}
-//           </dd>
-//           </div>
-//           `
-//     })
-// }
